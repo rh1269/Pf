@@ -1,0 +1,7 @@
+<%= form_tag("/posts/create", method: "post") do %>
+<p>Create a text post</p>
+  <%= hidden_field_tag(:post_type, "text") %>
+  <%= text_field_tag(:title) %><br/>
+  <%= text_area_tag(:content) %>
+  <%= submit_tag("Submit") %>
+<% end %>

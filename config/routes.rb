@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  
+
   root to: 'posts#home_feed'
   devise_for :users  
+
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
 
+  get '/posts/text', to: 'posts#text'
+  post '/posts/create', to: 'posts#create'
   get '/posts/:id', to: 'posts#show'
 
   get '/:username', to: 'users#show'
