@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'posts#home_feed'
+  
+  get '/posts/:id', to: 'posts#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

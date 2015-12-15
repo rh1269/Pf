@@ -6,5 +6,15 @@ class PostsController < ApplicationController
       redirect_to '/users/sign_in'
     end   
   end
+  
+  def show
+    id = params[:id]
+    @p = Post.find_by(id: id)
+
+  end
+
+  def create
+
+  end
 
 end
