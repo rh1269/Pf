@@ -1,2 +1,7 @@
-<%= @p.title %><br/>
-<%= @p.content %>
+<div class="main col-md-5">
+	<a href="/<%= @p.user.username %>"> <%= @p.user.username %> </a> posted:
+	<h3><%= @p.title %><br/></h3>
+	<%= @p.content %>
+<br/>
+	<a href="/reblog/<%= @p.id %>">Reblog</a>
+</div>
