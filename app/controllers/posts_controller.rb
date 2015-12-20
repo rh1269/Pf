@@ -18,7 +18,10 @@ class PostsController < ApplicationController
   end
 
   def submit_reblog
-
+    id = params[:id]
+    p = Post.new(user_id: current_user.id, community_post: false, original_post_id: id)
+    p.save
+    redirect_to '/' + current_user[:username]
   end
 
   def text
