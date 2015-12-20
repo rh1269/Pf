@@ -1,0 +1,13 @@
+
+
+<div class="col-md-5">
+	<div class= "main">
+		<a href="/<%= @post.user.username %>"> <%= @post.user.username %> </a> posted:
+		<h3><%= @post.title %><br/></h3>
+		<%= @post.content %>	
+	</div>
+<%= form_tag("/reblog/@post.id", method: "get") do %>
+ <%= text_area_tag(:comment) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+</div>

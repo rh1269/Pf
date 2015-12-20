@@ -2,15 +2,19 @@ Rails.application.routes.draw do
 
   root to: 'posts#home_feed'
   devise_for :users  
-
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
 
+  #POST ROUTES
   get '/posts/text', to: 'posts#text'
   post '/posts/create', to: 'posts#create'
   get '/posts/:id', to: 'posts#show'
 
+  get '/reblog/:id', to: 'posts#reblog'
+  post '/reblog/:id', to: 'posts#submit_reblog'
+
+  #USER ROUTES
   get '/:username', to: 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

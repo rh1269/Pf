@@ -9,11 +9,20 @@ class PostsController < ApplicationController
   
   def show
     id = params[:id]
-    @p = Post.find_by(id: id)
+    @post = Post.find_by(id: id)
+
+  end
+
+  def reblog
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def submit_reblog
 
   end
 
   def text
+   #just returns view
   end 
 
   def create
@@ -21,7 +30,6 @@ class PostsController < ApplicationController
       p = Post.new(user_id: current_user.id, title: params[:title], content: params[:content], post_type: params[:post_type], community_post: false)
       p.save
     end
-
     redirect_to '/' + current_user[:username]
   end
 
