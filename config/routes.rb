@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
 
-  #POST ROUTES
+  #POSTS
   get '/posts/text', to: 'posts#text'
   post '/posts/create', to: 'posts#create'
   get '/posts/:id', to: 'posts#show'
@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   get '/reblog/:id', to: 'posts#reblog'
   post '/reblog/:id', to: 'posts#submit_reblog'
 
-  #USER ROUTES
+  #COMMUNITIES
+  get '/community/create', to: 'communities#create'
+  post '/community/create', to: 'communities#create_submit'
+  get '/community/:name', to: 'communities#show'
+
+  #USERS
   get '/:username', to: 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.

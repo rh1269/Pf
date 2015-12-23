@@ -1,0 +1,10 @@
+<div class="col-md-5">
+	<div class= "main">
+		<p>Create a community</p>
+		<%= form_tag("/community/create", method: "post") do %>
+		<%= label_tag(:name, "Community name:")%>
+		 <%= text_field_tag(:name) %>
+		 <%= submit_tag("Submit") %>
+		<% end %>
+	</div>
+</div>
