@@ -6,8 +6,8 @@
 		<h3><%= @post.title %><br/></h3>
 		<%= @post.content %>	
 	</div>
-<%= form_tag("/reblog/"+ @post.id.to_s, method: "post") do %>
- <%= text_area_tag(:comment) %>
+  <%= form_tag("/reblog/"+ @post.id.to_s, method: "post") do %>
+  <%= text_area_tag(:comment) %>
   <%= submit_tag("Submit") %>
 <% end %>
 </div>
