@@ -8,9 +8,12 @@ class PostsController < ApplicationController
   end
 
   def home_json
-    p = Post.where(user_id: current_user.id)
+    follows = Follow.where(follower_id: current_user.id)
+    follow_posts = follows.map { |f|
+      Post.where(user_id: f['followed_id'])
+      }
     @posts =[]
-    p.each do |post|
+    follow_posts.flatten.each do |post|
       obj = post.attributes
       if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
