@@ -5,10 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+  has_many :community_memberships
 
-  has_many :following_me, class_name: "Follow", foreign_key: :follower_id
-  has_many :followers, through: :following_me
+  has_many :followers, class_name: "Follow", foreign_key: :followed_id
+  has_many :following, class_name: "Follow", foreign_key: :follower_id
 
-  has_many :followees, class_name: "Follow", foreign_key: :followee_id
-  has_many :following, through: :followees
 end

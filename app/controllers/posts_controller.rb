@@ -6,6 +6,20 @@ class PostsController < ApplicationController
       redirect_to '/users/sign_in'
     end   
   end
+
+  def home_json
+    p = Post.where(user_id: current_user.id)
+    @posts =[]
+    p.each do |post|
+      obj = post.attributes
+      if post['original_post_id'] != nil
+        obj['original_post'] = post.original_post
+        obj['original_username'] = post.original_post.user.username   
+      end  
+      @posts.push(obj)
+    end 
+     render :json => @posts
+  end
   
   #single post show
   def show
