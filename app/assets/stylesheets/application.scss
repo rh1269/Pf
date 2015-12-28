@@ -16,11 +16,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "layout";
+@import "variables";
 @import "navbar";
 
 body{
-	background-color: #33adff;
+	background-color: $primary-bg-color;
+	padding-top: 70px;
 }
 
 .main {
@@ -38,7 +39,3 @@ body{
 		font-size: 14px;
 		color: white;
 	}
-
-.right {
-	float: right;
-}

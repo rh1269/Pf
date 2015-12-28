@@ -17,5 +17,5 @@
 //= require angular-route
 //= require angular/main
 //= require angular/controllers/PostCtrl
+//= require bootstrap-sprockets
 //= require_tree .
-
