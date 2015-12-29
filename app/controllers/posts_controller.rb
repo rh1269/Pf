@@ -57,4 +57,7 @@ class PostsController < ApplicationController
     redirect_to '/' + current_user[:username]
   end
 
+  def new_comment
+
+  end
 end

@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   get '/reblog/:id', to: 'posts#reblog'
   post '/reblog/:id', to: 'posts#submit_reblog'
 
+  #COMMENTS
+  post '/posts/:id/comment', to: 'posts#new_comment'
+  post '/posts/:id/comment/:id/delete', to: 'posts#delete_comment'
+  post '/posts/:id/comment/:id/edit', to: 'posts#edit_comment'
+
+
+
   #COMMUNITIES
   get '/community/create', to: 'communities#create'
   post '/community/create', to: 'communities#create_submit'
