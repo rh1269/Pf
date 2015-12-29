@@ -58,6 +58,11 @@ class PostsController < ApplicationController
   end
 
   def new_comment
-
+    c = Comment.new(user_id: current_user.id, body: params[:comment], post_id: params[:id])
+    if params[:parent_id]
+      c[:parent_id] = params[:parent_id]
+    end    
+    c.save
+    redirect_to '/posts/' + params[:id]
   end
 end
