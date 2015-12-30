@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229025638) do
+ActiveRecord::Schema.define(version: 20151230033059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20151229025638) do
     t.string   "title"
     t.text     "content"
     t.string   "post_type"
-    t.boolean  "community_post"
     t.integer  "original_post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "community_id"
   end
 
   create_table "taggings", force: :cascade do |t|
