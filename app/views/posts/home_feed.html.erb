@@ -1,6 +1,14 @@
 <div class="showposts" ng-controller="homeFeedCtrl">
 	 <div ng-repeat="p in posts">
-		 {{p.title}}
-		 {{p.content}}
-	 </div>
+		<div class="post"> 
+		<div class="header">
+			<div class="citation" ng-if="p.original_post_id != null">
+				{{ p.username }} reblogged this post from {{ u.original_user }}</div>
+			<div class="citation" ng-if="p.original_post_id === null">
+				{{ p.username }}  posted:
+			</div>			
+			{{p.title}}	
+		 </div>
+			{{p.content}}
+	 	</div>
 </div>

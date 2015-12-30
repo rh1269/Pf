@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @posts =[]
     follow_posts.flatten.each do |post|
       obj = post.attributes
+      obj['username'] = post.user.username
       if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
         obj['original_username'] = post.original_post.user.username   

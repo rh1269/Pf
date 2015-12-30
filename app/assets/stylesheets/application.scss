@@ -25,3 +25,16 @@ body{
 	background-color: #fff;
 }
 
+.post{
+	background-color: #fff;
+	width: 600px;
+	min-height: 50px;
+
+	.header{
+		background-color: #333333;
+		min-height: 30px;
+		font-size: 14px;
+		color: white;
+	}
+
+}
