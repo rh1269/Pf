@@ -4,8 +4,10 @@
 
 .navbar-inverse .navbar-brand {
   color: $darkbg-link;
+  position: relative;
+  z-index: 100;
 
-  &:hover {
+  &:hover, a:hover {
     color: $darkbg-link-hover;
   }
 }
@@ -41,6 +43,11 @@ ul.nav > li {
 
 .nav-highlight {
   color: $primary-bg-color;
+
+  & > a:hover {
+    text-decoration: none;
+    color: $darkbg-link-hover;
+  }
 }
 
 .navbar-title {

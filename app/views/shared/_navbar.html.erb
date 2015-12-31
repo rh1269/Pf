@@ -21,7 +21,10 @@
         <% if user_signed_in? %>
           <li class="navbar-text hidden-xs">
             <p>
-              Logged in as <span class="nav-highlight"><%= current_user.username %></span>
+              Logged in as
+              <span class="nav-highlight">
+                <%= link_to current_user.username, user_path(current_user.username) %>
+              </span>
             </p>
           </li>
           <li class="nav-logout">
