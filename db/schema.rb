@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230185742) do
+ActiveRecord::Schema.define(version: 20151231002910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20151230185742) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "deleted"
+    t.datetime "deleted_at"
   end
 
   create_table "communities", force: :cascade do |t|
@@ -56,6 +58,8 @@ ActiveRecord::Schema.define(version: 20151230185742) do
     t.datetime "updated_at"
     t.integer  "community_id"
     t.boolean  "rebloggable"
+    t.boolean  "deleted"
+    t.datetime "deleted_at"
   end
 
   create_table "taggings", force: :cascade do |t|
