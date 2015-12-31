@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'posts#home_feed'
-  devise_for :users  
+  devise_for :users
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get '/community/:name', to: 'communities#show'
 
   #USERS
-  get '/:username', to: 'users#show'
+  get '/:username', to: 'users#show', as: 'user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
