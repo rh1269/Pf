@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @posts =[]
     follow_posts.flatten.each do |post|
       obj = post.attributes
+      obj['tags'] = post.tag_list
       obj['username'] = post.user.username
       if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
@@ -52,9 +53,10 @@ class PostsController < ApplicationController
   #create post submit
   def create
     if params[:post_type] == 'text'
-      p = Post.new(user_id: current_user.id, title: params[:title], content: params[:content], post_type: params[:post_type], community_post: false)
-      p.save
+      p = Post.new(user_id: current_user.id, title: params[:title], content: params[:content], post_type: params[:post_type])
     end
+    p.tag_list.add(params[:tags], parse: true)
+    p.save
     redirect_to '/' + current_user[:username]
   end
 

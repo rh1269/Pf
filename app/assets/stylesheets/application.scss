@@ -32,6 +32,7 @@ body{
 	background-color: #fff;
 	width: 600px;
 	min-height: 50px;
+	margin-bottom: 20px;
 	
 	.header{
 		background-color: #292929;
@@ -43,5 +44,16 @@ body{
 	}
 	.content{
 		padding: 10px;
+	}
+}
+
+.new-post{
+
+	input[type="text"]{
+		width: 600px;
+	}
+
+	textarea{
+		width: 600px; 
 	}
 }
