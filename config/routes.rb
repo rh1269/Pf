@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   #USERS
   get '/:username', to: 'users#show', as: 'user'
+  get '/:username/json', to: 'users#show_json'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

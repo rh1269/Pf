@@ -3,7 +3,7 @@
 		<div class="post"> 
 		<div class="header">
 			<div class="citation" ng-if="p.original_post_id != null">
-				{{ p.username }} reblogged this post from {{ u.original_user }}</div>
+				{{ p.username }} reblogged this post from {{ p.u.original_user }}</div>
 			<div class="citation" ng-if="p.original_post_id === null">
 				{{ p.username }}  posted:
 			</div>

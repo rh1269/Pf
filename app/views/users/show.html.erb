@@ -1,1 +1,13 @@
-<%= @posts %>
+<div class="showposts" ng-controller="userBlogCtrl">
+	 <div ng-repeat="p in posts">
+		<div class="post"> 
+		<div class="header">
+			<div class="citation" ng-if="p.original_post_id != null">
+				{{ p.u.original_user }} posted:
+			</div>			
+			{{p.title}}	
+		 </div>
+			{{p.content}}
+	 	</div>
+	</div>
+</div>
