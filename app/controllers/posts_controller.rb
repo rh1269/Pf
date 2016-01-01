@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def show
     id = params[:id]
     @post = Post.find_by(id: id)
-
+    @comments = Comment.where(post_id: id)
   end
 
   #reblog form page display

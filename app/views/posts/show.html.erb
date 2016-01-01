@@ -3,12 +3,27 @@
 <div class="col-md-5">
 
 	<div class="main post">
-	<div class="header">
-		<a href="/<%= @post.user.username %>"> <%= @post.user.username %> </a> posted:
-		<h3><%= @post.title %></h3>
+		<div class="header">
+			<a href="/<%= @post.user.username %>"><%= @post.user.username %></a> posted:
+			<h3><%= @post.title %></h3>
+		</div>
+		<div class="content">
+			<%= @post.content %>
+		</div>		
+			<a href="/reblog/<%= @post.id %>">Reblog</a>
 	</div>
-	<div class="content">
-		<%= @post.content %>
-	</div>		
-		<a href="/reblog/<%= @post.id %>">Reblog</a>
-	</div></div>
+
+	<div class="main" style="margin-top: 10px; padding: 10px;">Add a Comment
+		<div>
+		<%= form_tag("/posts/"+@post.id.to_s+"/comment", method: "post") do %>
+ 		<%= text_area_tag(:comment) %><br>
+ 		<%= submit_tag("Submit") %>
+ 		<% end %>
+		</div>
+	</div>
+	<div style="margin-top: 10px; padding: 10px;">
+		Comments<br>
+		<%= @comments.to_json %>
+
+	</div>
+</div>
