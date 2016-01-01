@@ -1,0 +1,64 @@
+.sidebar {
+  height: calc(100vh - 55px);
+  background-color: $secondary-bg-color;
+  color: #727272;
+
+  border-left: 2px solid $secondary-bg-color;
+  border-right: 2px solid $secondary-bg-color;
+}
+
+.sidebar-header {
+  font-size: 1.5em;
+  height: 40px;
+
+  & > div {
+    height: 100%;
+    border: 2px solid $secondary-bg-color;
+    padding-top: 3px;
+    background-color: #181818;
+  }
+}
+
+.sidebar-boxes {
+  .second-row .sidebar-box {
+    padding-top: 10px;
+    font-size: 2.1em;
+
+    & .box-text {
+      font-size: 0.45em;
+    }
+  }
+
+  .sidebar-box {
+    height: 100px;
+    background-color: #181818;
+    border: 2px solid $secondary-bg-color;
+    font-size: 1.7em;
+    text-align: center;
+    padding: 20px 0 0 0;
+
+
+    & .box-text {
+      margin-top: 15px;
+      font-size: 0.5em;
+    }
+
+    &.followers {
+      color: #125daa;
+    }
+
+    &.following {
+      color: #c1134b;
+    }
+
+    &.mutuals {
+      color: #8241d2;
+    }
+
+    &.mail {
+      & .box-text {
+        margin: 0;
+      }
+    }
+  }
+}
