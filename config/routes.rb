@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   get '/community/create', to: 'communities#create'
   post '/community/create', to: 'communities#create_submit'
   get '/community/:name', to: 'communities#show'
+  post '/community/:name/join', to: 'communities#join'
+  post '/community/:name/leave', to: 'communities#leave'
+
+
 
   #USERS
   get '/:username', to: 'users#show', as: 'user'

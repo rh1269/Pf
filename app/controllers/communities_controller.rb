@@ -16,4 +16,17 @@ class CommunitiesController < ApplicationController
     redirect_to '/community/'+URI.encode(name)
   end
 
+  def join
+    comm = Community.where(name: params[:name])[0]
+    c.save
+    redirect_to '/community/'+URI.encode(name)
+  end
+
+  def leave
+    comm = Community.where(name: params[:name])[0]
+    c = CommunityMembership.where(user_id: current_user.id, community_id: comm['id'])
+    c.delete
+    redirect_to '/community/'+URI.encode(name)
+  end
+
 end
