@@ -1,0 +1,36 @@
+<div ng-repeat="p in posts">
+			<div class="post"> 
+			<div class="header">
+				<div class="citation" ng-if="p.original_post_id != null">
+					{{ p.username }} reblogged this post from {{ p.u.original_user }}</div>
+				<div class="citation" ng-if="p.original_post_id === null">
+					<a href="/{{ p.username }}">{{ p.username }}</a>  posted:
+				</div>
+				{{p.title}}	
+			</div>
+
+			<div class="content">
+			{{p.content}}
+			</div>
+
+			<div ng-if="p.tags.length > 0" class="tags-container">			
+				<div class="tags">
+					Tags: <span ng-repeat="tag in p.tags">
+						<span ng-if="!$last"><a href='{{ tag }}'> {{ tag }}</a>,</span>
+						<span ng-if="$last"><a href='{{ tag }}'> {{ tag }} </a></span>	
+					</span>	
+				</div>
+			</div> 
+
+			<div class="post-nav">
+				<div class="post-nav-left">
+					<a href="/posts/{{ p.id }}"><span class="glyphicon glyphicon-comment"></span></a>
+					<a href='/reblog/{{ p.id }}'><span class="glyphicon glyphicon-retweet"></span></a>
+					<a href=""><span class="glyphicon glyphicon-heart-empty"></span></a>
+				</div>
+				<div ng-if="<%= current_user.id %> === p.user_id" class="post-nav-right">
+					<a href="/posts/:id/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a> <a href="/posts/:id/delete"><i class="fa fa-times fa-lg"></i></a>				
+				</div>
+			</div>		
+		</div>
+	</div>

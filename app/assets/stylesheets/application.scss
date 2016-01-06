@@ -24,17 +24,21 @@ body{
 	padding-top: 70px;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 .main {
 	background-color: #fff;
 }
 
-.post{
+.post {
 	background-color: #fff;
 	width: 600px;
 	min-height: 50px;
 	margin-bottom: 20px;
 	
-	.header{
+	.header {
 		background-color: #292929;
 		min-height: 30px;
 		font-size: 14px;
@@ -42,8 +46,22 @@ body{
 		padding: 10px;
 
 	}
-	.content{
+
+	.content {
 		padding: 10px;
+		border-bottom: 1px solid #B2B2B2;
+	}
+
+	.tags{
+
+	}
+
+	.post-nav {
+		padding: 10px; 
+
+		.glyphicon {
+			font-size: 20px;
+		}
 	}
 }
 
