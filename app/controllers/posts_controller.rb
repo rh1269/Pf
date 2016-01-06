@@ -17,6 +17,7 @@ class PostsController < ApplicationController
       obj = post.attributes
       obj['tags'] = post.tag_list
       obj['username'] = post.user.username
+      obj['reblog_count'] = 
       if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
         obj['original_username'] = post.original_post.user.username   
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
 
   def submit_reblog
     id = params[:id]
-    p = Post.new(user_id: current_user.id, community_post: false, original_post_id: id)
+    p = Post.new(user_id: current_user.id, original_post_id: id)
     p.save
     redirect_to '/' + current_user[:username]
   end

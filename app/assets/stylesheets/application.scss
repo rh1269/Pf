@@ -47,9 +47,18 @@ a:hover {
 
 	}
 
+	.citation{
+		font-size: 12px;
+	}
+
+	.title{
+		font-size: 20px;
+		padding-left: 20px;
+	}
+
 	.content {
 		padding: 10px;
-		border-bottom: 1px solid #B2B2B2;
+		border-bottom: 1px solid #CECECE;
 	}
 
 	.tags{
@@ -57,10 +66,18 @@ a:hover {
 	}
 
 	.post-nav {
-		padding: 10px; 
+	
 
+		.nav-tab{
+			padding: 15px;
+		
+			border-right: solid 1px #CECECE;
+			display: inline-block;
+			
+
+		}
 		.glyphicon {
-			font-size: 20px;
+			font-size: 25px;
 		}
 	}
 }
