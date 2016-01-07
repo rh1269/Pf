@@ -20,16 +20,12 @@ Rails.application.routes.draw do
   post '/posts/:id/comment/:id/delete', to: 'posts#delete_comment'
   post '/posts/:id/comment/:id/edit', to: 'posts#edit_comment'
 
-
-
   #COMMUNITIES
   get '/community/create', to: 'communities#create'
   post '/community/create', to: 'communities#create_submit'
   get '/community/:name', to: 'communities#show'
   post '/community/:name/join', to: 'communities#join'
   post '/community/:name/leave', to: 'communities#leave'
-
-
 
   #USERS
   get '/:username', to: 'users#show', as: 'user'
