@@ -17,7 +17,9 @@ class PostsController < ApplicationController
       obj = post.attributes
       obj['tags'] = post.tag_list
       obj['username'] = post.user.username
-      obj['reblog_count'] = 
+      obj['comments_count'] = post.comments.length
+      obj['reblog_count'] = post.reblogs.length
+      obj['likes_count'] = post.likes.length
       if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
         obj['original_username'] = post.original_post.user.username   

@@ -31,13 +31,19 @@
 			<div class="post-nav">
 				<div class="post-nav-left">
 					<div class="nav-tab">
-						<a href="/posts/{{ p.id }}"><span class="glyphicon glyphicon-list"></span></a>
+						<a href="/posts/{{ p.id }}"><span class="glyphicon glyphicon-list"></span>
+						<div>{{p.comments_count}}</div>
+						</a>
 					</div>
 					<div class="nav-tab">
-						<a href='/reblog/{{ p.id }}'><span class="glyphicon glyphicon-retweet"></span></a>
+						<a href='/reblog/{{ p.id }}'><span class="glyphicon glyphicon-retweet"></span>
+						<div>{{p.reblog_count}}</div>
+						</a>
 					</div>
 					<div class="nav-tab">
-						<a href=""><span class="glyphicon glyphicon-heart-empty"></span></a>
+						<a href=""><span class="glyphicon glyphicon-heart-empty"></span>
+						<div>{{p.likes_count}}</div>
+						</a>
 					</div>
 				</div>
 				<div ng-if="<%= current_user.id %> === p.user_id" class="post-nav-right">
