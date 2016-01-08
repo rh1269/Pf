@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/posts/text', to: 'posts#text'
   post '/posts/create', to: 'posts#create'
   get '/posts/:id', to: 'posts#show'
+  get '/posts/:id/json', to: 'posts#show_json'
   get '/home/json', to: 'posts#home_json'
 
   get '/reblog/:id', to: 'posts#reblog'

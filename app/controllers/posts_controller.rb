@@ -36,6 +36,18 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: id)
   end
 
+  def show_json
+    post = Post.find_by(id: params[:id])
+    obj = post.attributes
+      obj['tags'] = post.tag_list
+      obj['username'] = post.user.username
+      obj['comments_count'] = post.comments.length
+      obj['reblog_count'] = post.reblogs.length
+      obj['likes_count'] = post.likes.length
+      obj['comments'] = post.comments
+    render :json => obj
+  end
+
   #reblog form page display
   def reblog
     @post = Post.find_by(id: params[:id])

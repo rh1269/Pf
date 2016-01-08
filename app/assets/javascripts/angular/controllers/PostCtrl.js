@@ -11,6 +11,17 @@ postControllers.controller('homeFeedCtrl', ['$scope', '$http', '$location', '$sc
 }]);
 
 
+postControllers.controller('singlePostCtrl', ['$scope', '$http', '$location', '$sce', function($scope, $http, $location, $sce) {
+	urlBits = $location.absUrl().split("/");
+	$http.get('/posts/' + urlBits[4] + '/json/' ).success(function(data) {
+   		$scope.p = data;   		
+	});
+
+	//$scope.trustUrl = function(url) {
+    //return $sce.trustAsResourceUrl(url);
+	//}
+}]);
+
 postControllers.controller('userBlogCtrl', ['$scope', '$http', '$location', '$sce', function($scope, $http, $location, $sce) {
 	urlBits = $location.absUrl().split("/");
 	//urlBits.length > 4 ? offset = urlBits[5] : offset = 0;
