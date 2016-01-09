@@ -1,8 +1,8 @@
 <div class="col-md-3"></div>
 
-<div class="col-md-5">
+<div class="col-md-6" ng-controller="singlePostCtrl">
 
-<div class="post" ng-controller="singlePostCtrl">
+<div class="post">
 
 	<div class="header">
 
@@ -32,12 +32,7 @@
 	</div> 
 
 	<div class="post-nav">
-		<div class="post-nav-left">
-			<div class="nav-tab">
-				<a href="/posts/{{ p.id }}"><span class="glyphicon glyphicon-list"></span>
-				<div>{{p.comments_count}}</div>
-				</a>
-			</div>
+		<div class="post-nav-left">			
 			<div class="nav-tab">
 				<a href='/reblog/{{ p.id }}'><span class="glyphicon glyphicon-retweet"></span>
 				<div>{{p.reblog_count}}</div>
@@ -53,6 +48,31 @@
 			<a href="/posts/:id/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a> <a href="/posts/:id/delete"><i class="fa fa-times fa-lg"></i></a>				
 		</div>
 	</div>		
+</div>
+
+	<div class="main" style="margin-top: 10px; padding: 10px;">Add a Comment
+		<div>
+		<%= form_tag("/posts/"+@post.id.to_s+"/comment", method: "post") do %>
+ 		<%= text_area_tag(:comment) %><br>
+ 		<%= submit_tag("Submit") %>
+ 		<% end %>
+		</div>
+	</div>
+
+	<div style="margin-top: 10px; padding: 10px;">
+		<b>{{p.comments_count}}</b> Comments<br>
+		<div ng-repeat="c in p.comments">	
+			<div class="main comment">	
+				<div class="header">
+				<a href="/{{c.username}}">{{c.username}}</a> left a comment:
+				</div>		
+				<div class="body">
+					{{c.body}}
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
 
 </div>

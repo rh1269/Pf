@@ -36,7 +36,7 @@ a:hover {
 	background-color: #fff;
 	width: 600px;
 	min-height: 50px;
-	margin-bottom: 20px;
+	margin: 0px auto 20px auto;
 	
 	.header {
 		background-color: #292929;
@@ -58,7 +58,7 @@ a:hover {
 
 	.content {
 		padding: 10px;
-		border-bottom: 1px solid #CECECE;
+		border-bottom: 1px solid $inner-border;
 	}
 
 	.tags{
@@ -71,7 +71,7 @@ a:hover {
 		.nav-tab{
 			padding: 15px;
 			text-align: center;
-			border-right: solid 1px #CECECE;
+			border-right: solid 1px $inner-border;
 			display: inline-block;
 			
 
@@ -81,7 +81,18 @@ a:hover {
 		}
 	}
 }
+.comment{	
 
+	.header{
+		padding: 10px;
+		border-bottom: solid 1px $inner-border;
+	}
+	.body{
+		padding: 10px;
+	}
+
+	
+}
 .new-post{
 
 	input[type="text"]{

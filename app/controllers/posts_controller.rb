@@ -44,7 +44,12 @@ class PostsController < ApplicationController
       obj['comments_count'] = post.comments.length
       obj['reblog_count'] = post.reblogs.length
       obj['likes_count'] = post.likes.length
-      obj['comments'] = post.comments
+      obj['comments'] = []
+      post.comments.each { |c|
+        data = c.attributes
+        data['username'] = c.user.username
+        obj['comments'].push(data)
+      }
     render :json => obj
   end
 
