@@ -28,8 +28,10 @@ a:hover {
 	text-decoration: none;
 }
 
+
 .main {
 	background-color: #fff;
+	border: 1px solid #359CE2;
 }
 
 .post {
@@ -69,23 +71,31 @@ a:hover {
 	
 
 		.nav-tab{
-			padding: 15px;
+			padding: 5px 15px;
 			text-align: center;
 			border-right: solid 1px $inner-border;
 			display: inline-block;
-			
-
+			line-height: 15px;
+			font-size: 12px;
 		}
+
 		.glyphicon {
 			font-size: 25px;
 		}
 	}
 }
-.comment{	
 
+.comments-container{
+	margin: 0px auto 20px auto;
+	width: 600px;
+}
+
+.comment{	
+	 width: 600px;
 	.header{
 		padding: 10px;
 		border-bottom: solid 1px $inner-border;
+		font-size: 12px;
 	}
 	.body{
 		padding: 10px;
@@ -103,3 +113,13 @@ a:hover {
 		width: 600px; 
 	}
 }
+
+.comment-form{
+	width: 600px;
+	margin: 0px auto 20px auto;
+
+	#comment{
+		width: 570px;
+	}
+}
+
