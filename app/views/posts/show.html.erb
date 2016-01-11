@@ -62,12 +62,13 @@
 	<div class="comments-container">
 		<b>{{p.comments_count}}</b> Comments<br>
 		<div ng-repeat="c in p.comments">	
-			<div class="main comment">	
+			<div class="main comment" id="{{c.id}}">	
 				<div class="header">
 				<a href="/{{c.username}}">{{c.username}}</a> left a comment:
 				</div>		
 				<div class="body">
 					{{c.body}}
+					<button class="comment-reply">Reply</button>
 				</div>
 			</div>
 		</div>
@@ -76,3 +77,24 @@
 </div>
 
 </div>
+
+<script id="reply-form" type = "text/template">
+	<div>
+		<%= form_tag("/posts/"+@post.id.to_s+"/comment", method: "post") do %>
+ 		<%= text_area_tag(:comment) %><br>
+ 		<%= hidden_field_tag(:parent_id) %>
+ 		<%= submit_tag("Submit") %>
+ 		<% end %>
+	</div>
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('body').on('click', '.comment-reply', function(){		
+			var id = $(this).parent().parent().attr('id');			
+			var html = $('#reply-form').text();
+		 	$('.comment#'+id).append(html);
+		});
+	})
+
+</script>
