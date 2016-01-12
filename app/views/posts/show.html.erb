@@ -71,6 +71,7 @@
 					<button class="comment-reply">Reply</button>
 				</div>
 			</div>
+			<div id="form-div-{{c.id}}"></div>
 		</div>
 	</div>
 
@@ -79,7 +80,7 @@
 </div>
 
 <script id="reply-form" type = "text/template">
-	<div>
+	<div class="main" style="padding:10px">
 		<%= form_tag("/posts/"+@post.id.to_s+"/comment", method: "post") do %>
  		<%= text_area_tag(:comment) %><br>
  		<%= hidden_field_tag(:parent_id) %>
@@ -93,7 +94,7 @@
 		$('body').on('click', '.comment-reply', function(){		
 			var id = $(this).parent().parent().attr('id');			
 			var html = $('#reply-form').text();
-		 	$('.comment#'+id).append(html);
+		 	$('.comment#'+id).children('.form-div').append(html);
 		});
 	})
 

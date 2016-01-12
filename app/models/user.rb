@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   has_many :followers, class_name: "Follow", foreign_key: :followed_id
   has_many :following, class_name: "Follow", foreign_key: :follower_id
 
+  has_many :blocking, class_name: "Block", foreign_key: :blocked_from_id, as: :blocked_from
+  has_many :blocked_from, class_name: "Block", foreign_key: :blocked_id
+
 end
