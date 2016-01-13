@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   get '/:username', to: 'users#show', as: 'user'
   get '/:username/json', to: 'users#show_json'
 
+  #FOLLOWING
+  post '/:username/follow', to: 'follows#user_create'
+  post '/community/:name/follow', to: 'follows#comm_create'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

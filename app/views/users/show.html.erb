@@ -1,10 +1,13 @@
-<div class="col-md-3">
-	<div class="user-sidebar"></div>
+<div class="col-md-3" style="padding: 0px !important;">
+	<div class="user-sidebar">
+		<div class="title"><%= @user.username %></div>
+		<div><button id="follow">Follow</button></div>
+	</div>
 </div>
 
-<div class="col-md-5">
+<div class="col-md-6">
 
-<div class="showposts" ng-controller="userBlogCtrl">
+<div class="showposts center-lane" ng-controller="userBlogCtrl">
 	 <div ng-repeat="p in posts">
 		<div class="post"> 
 		<div class="header">
@@ -52,3 +55,11 @@
 </div>
 
 </div>
+
+<script>
+	$(document).ready(function(){
+		$('#follow').click(function(){
+			$.post('/<%=@user.username%>/follow');
+		});
+	})
+</script>

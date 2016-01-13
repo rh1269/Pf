@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   #user blog page
   def show
-
+    @user = User.find_by(username: params['username'])
   end
 
   def show_json
