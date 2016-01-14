@@ -13,4 +13,5 @@ class FollowsController < ApplicationController
     f.save
     redirect_to '/community/' + params[:name]
   end
+
 end

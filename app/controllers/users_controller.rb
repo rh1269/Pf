@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   #user blog page
   def show
     @user = User.find_by(username: params['username'])
+    @following = Follow.find_by(follower_id: current_user.id, followed_id: @user['id'], followed_type: "User")
   end
 
   def show_json

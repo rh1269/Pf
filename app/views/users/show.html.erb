@@ -1,7 +1,11 @@
 <div class="col-md-3" style="padding: 0px !important;">
 	<div class="user-sidebar">
 		<div class="title"><%= @user.username %></div>
-		<div><button id="follow">Follow</button></div>
+		<% if @following %>
+			<div><a href="" class="glyphicon glyphicon-ok-circle" id="follow"></a></div>
+		<% else %>
+			<div><a href="" class="glyphicon glyphicon-plus-sign" id="follow"></a></div>
+		<% end %>
 	</div>
 </div>
 
@@ -59,7 +63,7 @@
 <script>
 	$(document).ready(function(){
 		$('#follow').click(function(){
-			$.post('/<%=@user.username%>/follow', {'authenticity_token': '<%= form_authenticity_token %>'});
+			$.post('/<%=@user.username%>/follow', {'authenticity_token': '<%= form_authenticity_token %>'}).success( function(){ location.reload();});
 		});
 	})
 </script>
