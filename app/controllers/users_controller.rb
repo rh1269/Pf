@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @posts =[]
     p.each do |post|
       obj = post.attributes
-      obj['tags'] = post.tag_list
+      obj['tags'] = post.tag_list.reverse
         if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
         obj['original_username'] = post.original_post.user.username   
