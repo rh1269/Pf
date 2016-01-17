@@ -1,27 +1,32 @@
 <div ng-repeat="p in posts" class="ng-cloak">
-			<div class="post"> 
+			<div class="post main"> 
 
 			<div class="header">
 
 				<div class="citation" ng-if="p.original_post_id != null">
-					{{ p.username }} reblogged this post from {{ p.u.original_user }}</div>
+					<a href="/{{ p.username }}">{{ p.username }}</a> reblogged this post from <a href="/{{ p.original_user}}">{{ p.original_username }}</a></div>
 				<div class="citation" ng-if="p.original_post_id === null">
 					<a href="/{{ p.username }}">{{ p.username }}</a>  posted:
 				</div>
 
-				<div class="title">
+				<div class="title" ng-if="p.original_post_id === null">
 				{{p.title}}	
 				</div>
-
+				<div class="title" ng-if="p.original_post_id != null">
+				{{p.original_post.title}}	
+				</div>
 			</div>
 
-			<div class="content">
+			<div class="content" ng-if="p.original_post_id === null">
 			{{p.content}}
+			</div>
+			<div class="content" ng-if="p.original_post_id != null">
+			{{p.original_post.content}}
 			</div>
 
 			<div ng-if="p.tags.length > 0" class="tags-container">			
 				<div class="tags">
-					Tags: <span ng-repeat="tag in p.tags">
+					<span style="font-size: 10px; color: gray;">TAGS</span> <span ng-repeat="tag in p.tags">
 						<span ng-if="!$last"><a href='{{ tag }}'> {{ tag }}</a>,</span>
 						<span ng-if="$last"><a href='{{ tag }}'> {{ tag }} </a></span>	
 					</span>	

@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   post '/:username/follow', to: 'follows#user_create'
   post '/community/:name/follow', to: 'follows#comm_create'
 
+  #VIEW TAGS
+
+get '/tagged/:tag', to: 'posts#tagged'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

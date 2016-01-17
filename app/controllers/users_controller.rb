@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params['username'])
     @following = Follow.find_by(follower_id: current_user.id, followed_id: @user['id'], followed_type: "User")
+    @reblogs = Post.where("original_post_id IS NOT NULL AND community_id IS NULL AND user_id = "+ @user.id.to_s).length
+    @original_posts = Post.where("original_post_id IS NULL AND community_id IS NULL AND user_id = "+ @user.id.to_s).length
   end
 
   def show_json
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
       end  
       @posts.push(obj)
     end
-    render :json => @posts  
+    render :json => @posts
   end  
   
 end

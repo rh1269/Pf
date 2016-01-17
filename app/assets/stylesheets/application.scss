@@ -19,6 +19,8 @@
 @import "variables";
 @import "navbar";
 
+//GENERAL
+
 body{
 	background-color: $primary-bg-color;
 	padding-top: 70px;
@@ -34,6 +36,7 @@ a:hover {
 	border: 1px solid #359CE2;
 }
 
+// POST FORMATTING
 .post {
 	background-color: #fff;
 	width: 600px;
@@ -64,11 +67,12 @@ a:hover {
 	}
 
 	.tags{
-
+		border-bottom: 1px solid $inner-border;	
+		font-size: 12px;
+		padding: 5px 10px;
 	}
 
-	.post-nav {
-	
+	.post-nav {	
 
 		.nav-tab{
 			padding: 5px 15px;
@@ -85,6 +89,7 @@ a:hover {
 	}
 }
 
+//COMMENTS
 .comments-container{
 	margin: 0px auto 20px auto;
 	width: 600px;
@@ -103,6 +108,8 @@ a:hover {
 
 	
 }
+
+//NEW POST FORM
 .new-post{
 
 	input[type="text"]{
@@ -114,6 +121,7 @@ a:hover {
 	}
 }
 
+//COMMENT FORM
 .comment-form{
 	width: 600px;
 	margin: 0px auto 20px auto;
@@ -123,6 +131,7 @@ a:hover {
 	}
 }
 
+//USER BLOG SIDEBAR
 .user-sidebar{
 	background-color: #fff;
 	padding: 10px;

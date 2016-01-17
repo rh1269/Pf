@@ -13,19 +13,19 @@
 
 <div class="showposts center-lane" ng-controller="userBlogCtrl">
 	 <div ng-repeat="p in posts">
-		<div class="post"> 
+		<div class="post main"> 
 		<div class="header">
 			<div class="citation" ng-if="p.original_post_id != null">
 				{{ p.u.original_user }} posted:
 			</div>			
-			{{p.title}}	
+			{{p.title}}
 		 </div>
 			{{p.content}}
 			<div ng-if="p.tags.length > 0" class="tags-container">			
 				<div class="tags">
 					Tags: <span ng-repeat="tag in p.tags">
 						<span ng-if="!$last"><a href='{{ tag }}'> {{ tag }}</a>,</span>
-						<span ng-if="$last"><a href='{{ tag }}'> {{ tag }} </a></span>	
+						<span ng-if="$last"><a href='{{ tag }}'> {{ tag }} </a></span>
 					</span>	
 				</div>
 			</div> 
@@ -49,16 +49,14 @@
 					</div>
 				</div>
 				<div ng-if="<%= current_user.id %> === p.user_id" class="post-nav-right">
-					<a href="/posts/:id/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a> <a href="/posts/:id/delete"><i class="fa fa-times fa-lg"></i></a>				
+					<a href="/posts/:id/edit"><i class="fa fa-pencil-square-o fa-lg"></i></a> <a href="/posts/:id/delete"><i class="fa fa-times fa-lg"></i></a>	
 				</div>
 			</div>		
 		</div>
 	</div>
-	 	</div>
-	</div>
+</div>
 </div>
 
-</div>
 
 <script>
 	$(document).ready(function(){
