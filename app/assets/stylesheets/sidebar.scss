@@ -1,4 +1,5 @@
 .sidebar {
+  width: 280px;
   height: calc(100vh - 55px);
   background-color: $secondary-bg-color;
   color: #727272;
@@ -8,15 +9,26 @@
 }
 
 .sidebar-header {
-  font-size: 1.5em;
+  font-size: 1.4em;
   height: 40px;
+  background-color: #181818;
+  display: inline-block;
+  width: 220px;
+  border: 2px solid $secondary-bg-color;
+  margin-top: 2px;
+  padding: 5px 0 0 10px;
+}
 
-  & > div {
-    height: 100%;
-    border: 2px solid $secondary-bg-color;
-    padding-top: 3px;
-    background-color: #181818;
-  }
+.sidebar-toggle-indicator {
+  font-size: 1.4em;
+  height: 40px;
+  width: 55px;
+  background-color: #181818;
+  border: 2px solid $secondary-bg-color;
+  border-right: 4px solid $secondary-bg-color;
+  margin-top: 2px;
+  padding: 5px 0 0 15px;
+  float: right;
 }
 
 .sidebar-boxes {
@@ -25,18 +37,20 @@
     font-size: 2.1em;
 
     & .box-text {
-      font-size: 0.45em;
+      margin-top: 10px;
+      font-size: 0.40em;
     }
   }
 
   .sidebar-box {
-    height: 100px;
+    height: 90px;
     background-color: #181818;
     border: 2px solid $secondary-bg-color;
     font-size: 1.7em;
     text-align: center;
-    padding: 20px 0 0 0;
-
+    padding: 10px 0 0 0;
+    width: 32%;
+    display: inline-block;
 
     & .box-text {
       margin-top: 15px;
@@ -57,8 +71,47 @@
 
     &.mail {
       & .box-text {
-        margin: 0;
+        margin-top: -6px;
       }
     }
+  }
+}
+
+.sidebar-row {
+  font-size: 1.5em;
+  padding: 12px;
+  background-color: #181818;
+  border: 2px solid $secondary-bg-color;
+  border-right: 4px solid $secondary-bg-color;
+  height: 60px;
+
+  & .row-text {
+    float: right;
+    padding-top: 2px;
+  }
+}
+
+.sidebar-icons {
+  padding-top: 80px;
+}
+
+.sidebar-icon {
+  background-color: #181818;
+  height: 40px;
+  width: 55px;
+  float: right;
+  border: 2px solid $secondary-bg-color;
+  border-right: 4px solid $secondary-bg-color;
+  font-size: 1.5em;
+  padding: 4px 0 0 13px;
+}
+
+.sidebar-collapsed {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    height: calc(100vh - 53px);
   }
 }
