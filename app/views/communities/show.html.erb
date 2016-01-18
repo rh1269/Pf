@@ -2,7 +2,16 @@
 	<div class="nav">
 	<div class="info">
 		<div class="title"><%= @comm.name %></div>
-
+		<div class="description"><%= @comm.description %></div>	
 	</div>
-</div>
+	<div class="comm-button">
+		<a href="/community/<%= @comm.name %>/join"> <div class="glyphicon glyphicon-user"></div><br/>Join</a>
+	</div>
+	<div class="comm-button">
+		<a href="/community/<%= @comm.name %>/join"> <div class="glyphicon glyphicon-edit"></div><br/>Post</a>
+	</div>
+
+	<div class="forum"></div>
+	<div class="posts"></div>
+</div>		
 

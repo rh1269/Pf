@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/community/create', to: 'communities#create'
   post '/community/create', to: 'communities#create_submit'
   get '/community/:name', to: 'communities#show'
+  get '/community/:name/posts/json', to: 'communities#posts_json'
+  get '/community/:name/forum/json', to: 'communities#forum_json'
   post '/community/:name/join', to: 'communities#join'
   post '/community/:name/leave', to: 'communities#leave'
 
