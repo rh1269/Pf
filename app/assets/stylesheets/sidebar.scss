@@ -3,13 +3,14 @@
   height: calc(100vh - 55px);
   background-color: $secondary-bg-color;
   color: #727272;
-
+  position: fixed;
   border-left: 2px solid $secondary-bg-color;
   border-right: 2px solid $secondary-bg-color;
 }
 
 .sidebar-header {
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-variant: small-caps;
   height: 40px;
   background-color: #181818;
   display: inline-block;
@@ -78,12 +79,13 @@
 }
 
 .sidebar-row {
-  font-size: 1.5em;
-  padding: 12px;
+  font-size: 1em;
+  font-variant: small-caps;
+  padding: 15px;
   background-color: #181818;
   border: 2px solid $secondary-bg-color;
   border-right: 4px solid $secondary-bg-color;
-  height: 60px;
+ 
 
   & .row-text {
     float: right;

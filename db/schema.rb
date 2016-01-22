@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117212407) do
+ActiveRecord::Schema.define(version: 20160122004207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,11 @@ ActiveRecord::Schema.define(version: 20160117212407) do
     t.boolean  "rebloggable"
     t.boolean  "deleted"
     t.datetime "deleted_at"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "timezone"
   end
 
   create_table "taggings", force: :cascade do |t|
