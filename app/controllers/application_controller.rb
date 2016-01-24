@@ -14,10 +14,12 @@ class ApplicationController < ActionController::Base
   end
 
   def sidebar_vars
-    user = User.find_by(id: current_user.id)
-    @followers = user.followers.length
-    @following = user.following.length
-    #@mutuals = Follow.where(follower)
+    if current_user
+      user = User.find_by(id: current_user.id)
+      @followers = user.followers.length
+      @following = user.following.length
+      #@mutuals = Follow.where(follower)
+    end
   end
 
 end

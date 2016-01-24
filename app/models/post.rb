@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
                           foreign_key: "original_post_id"
   has_many :reblogs, class_name: "Post", foreign_key: :original_post_id
   has_many :comments, class_name: "Comment"
+  has_many :media_urls
   belongs_to :community
   has_many :likes
   acts_as_taggable

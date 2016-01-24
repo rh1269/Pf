@@ -4,10 +4,9 @@ postControllers.controller('homeFeedCtrl', ['$scope', '$http', '$location', '$sc
 	$http.get('/home/json').success(function(data) {
    		$scope.posts = data;   		
 	});
-
-	//$scope.trustUrl = function(url) {
-    //return $sce.trustAsResourceUrl(url);
-	//}
+	$scope.trustUrl = function(url) {
+    return $sce.trustAsResourceUrl(url);
+	}
 }]);
 
 
@@ -17,9 +16,9 @@ postControllers.controller('singlePostCtrl', ['$scope', '$http', '$location', '$
    		$scope.p = data;   		
 	});
 
-	//$scope.trustUrl = function(url) {
-    //return $sce.trustAsResourceUrl(url);
-	//}
+	$scope.trustUrl = function(url) {
+    return $sce.trustAsResourceUrl(url);
+	}
 }]);
 
 postControllers.controller('userBlogCtrl', ['$scope', '$http', '$location', '$sce', function($scope, $http, $location, $sce) {

@@ -1,6 +1,7 @@
 <div ng-repeat="p in posts" class="ng-cloak" style="margin-top: 20px;">
 			<div class="post main"> 
-
+ 
+			<!-- header -->
 			<div class="header">
 
 				<div class="citation" ng-if="p.original_post_id != null">
@@ -17,12 +18,24 @@
 				</div>
 			</div>
 
+			<!-- content -->
+
 			<div class="content" ng-if="p.original_post_id === null">
-			{{p.content}}
+				<div ng-if="p.post_type === 'video'">			
+					<div ng-if="p.media[0].media_type === 'youtube'">
+						<div class="flex-video"> 
+						<iframe width="570" height="370" ng-src="{{ trustUrl('http://www.youtube.com/embed/'+ p.media[0].url) }}" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>					
+				</div>
+				{{p.content}}
 			</div>
 			<div class="content" ng-if="p.original_post_id != null">
-			{{p.original_post.content}}
+				{{p.original_post.content}}
 			</div>
+
+
+			<!-- tags -->
 
 			<div ng-if="p.tags.length > 0" class="tags-container">			
 				<div class="tags">
@@ -32,6 +45,8 @@
 					</span>	
 				</div>
 			</div> 
+
+			<!-- bottom nav -->
 
 			<div class="post-nav">
 				<div class="post-nav-left">

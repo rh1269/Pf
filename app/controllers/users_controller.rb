@@ -15,9 +15,11 @@ class UsersController < ApplicationController
     p.each do |post|
       obj = post.attributes
       obj['tags'] = post.tag_list.reverse
+      obj['media'] = p.media_urls
         if post['original_post_id'] != nil
         obj['original_post'] = post.original_post
         obj['original_username'] = post.original_post.user.username   
+        obj['media'] = post.original_post.media_urls
       end  
       @posts.push(obj)
     end
