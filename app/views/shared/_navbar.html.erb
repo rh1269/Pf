@@ -26,6 +26,13 @@
                 <%= link_to current_user.username, user_path(current_user.username) %>
               </span>
             </p>
+          <p>
+              Last Signed in at 
+              <span class="nav-highlight">
+                <%=Time.zone.parse current_user.last_sign_in_at.to_s %>
+              </span>
+            </p>
+
           </li>
           <li class="nav-logout">
             <%= link_to signout_path, class: 'signout' do %>

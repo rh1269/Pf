@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :sidebar_vars
+  before_filter :set_user_time_zone
 
   protected
 
@@ -21,5 +22,10 @@ class ApplicationController < ActionController::Base
       #@mutuals = Follow.where(follower)
     end
   end
+
+  def set_user_time_zone
+    Time.zone = current_user.time_zone 
+  end
+
 
 end
